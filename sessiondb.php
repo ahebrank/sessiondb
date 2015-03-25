@@ -2,7 +2,11 @@
 
 /*
 =====================================================
-* http://shiflett.org/articles/storing-sessions-in-a-database
+* Get EE and its modules to use DB-based PHP sessions, not the filesystem
+* Andy Hebrank, 2015
+* https://insidenewcity.com
+* 
+* Based on http://shiflett.org/articles/storing-sessions-in-a-database
 =====================================================
 
 */
