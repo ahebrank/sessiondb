@@ -2,6 +2,8 @@
 
 In some cases (e.g., when load balancing is in use) it may be important to centralize PHP sessions.  EE core doesn't really use them (it uses it's on db-based session management), but some modules do!
 
+Based on http://shiflett.org/articles/storing-sessions-in-a-database
+
 ## Installation and Use
 
 1. Add this folder to your system/expressionengine/hooks directory
