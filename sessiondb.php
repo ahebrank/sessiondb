@@ -7,6 +7,15 @@
 * https://insidenewcity.com
 * 
 * Based on http://shiflett.org/articles/storing-sessions-in-a-database
+*
+* on some distributions, you'll want to check for reasonable garbage collection settings
+* or your session table may keep growing.  here are some pretty sensible values for short
+* lived sessions:
+* 
+*   session.gc_probability = 1
+*   session.gc_divisor = 1000
+*   session.gc_maxlifetime = 1440
+
 =====================================================
 
 */
@@ -110,9 +119,9 @@ Class Sessiondb {
    */
   function _clean($max) {
     $old = time() - $max;
-
-    return ee()->db->delete($this->table_name, 
-      array('access <' => $old));
+    
+    return ee()->db->where('access <', $old)
+      ->delete($this->table_name);
   }
 
 }
