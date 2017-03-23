@@ -111,7 +111,7 @@ Class Sessiondb {
   function _clean($max) {
     $old = time() - $max;
 
-    return ee()->db->delete($this->data_name, 
+    return ee()->db->delete($this->table_name, 
       array('access <' => $old));
   }
 
